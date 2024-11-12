@@ -1,10 +1,10 @@
-# Instal·lació i configuració d'aplicacions web
+# Instalación y configuración de aplicaciones web
 
-Per instal·lar una aplicació web hem de baixar el seu codi font i portar-lo al directori arrel del nostre servidor d'aplicacions, en el nostre cas, `apache2`. Quan instal·lem `apache2` es crea una carpeta a `/var/www/html` on, per defecte, el servidor web utilitza com a directori arrel.
+Para instalar una aplicación web debemos de bajar el codigo fuente y llevarlo al directorio raiz del servidor de aplicacions, en nuestro caso, `apache2`. Cuando instalemos `apache2` se creara una carpeta a `/var/www/html` donde, per defecto, el servidor web utiliza como directorio raiz.
 
-Llavors, si portem la nostra aplicació al directori `/var/www/html` tindrem accés a la nostra aplicació mitjaçant l'adreça `http://localhost`.
+Entonces, si llevamos nuestra aplicación al directorio `/var/www/html` tendremos acceso a la aplicación mediante la dirección wen `http://localhost`.
 
-## Instal·lació d'apache2, mysql i algunes llibreries al contenidor
+## Instalación de apache2, mysql y algunas librerias al contenedor
 
 1. Actualització de la màquina.
 ```console
