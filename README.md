@@ -1,2 +1,1 @@
-# Enlace a descargar OwnCloud
-* ***OwnCloud***: http://www.owncloud.org
+# ***OwnCloud***: http://www.owncloud.org
