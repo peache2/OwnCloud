@@ -13,7 +13,7 @@ Actualizamos las listas de paquetes y actualizamos todos los paquetes del sistem
 sudo apt install software-properties-common -y
 ```
 
-### **2. Instalamos todas las herramientas que necesitamos para trabajar correctaemtne con los archivos personales (PPA).**
+### **2. Instalamos las herramientas necesarias para trabajar correctamente con archivos personales (PPA).**
 ```bash
 LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php -y
 ```
