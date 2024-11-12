@@ -1,6 +1,6 @@
 # Instalación de OwnCloud
 
-Para instalar la cloud necsitamos descargar el archivo que he dejado en el README
+###### *Para instalar la cloud necsitamos descargar el archivo que he dejado en el README*
 
 ## Instalamos la versión 7.4 de PHP en el sistema operativo Ubuntu 24.04
 
