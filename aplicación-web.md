@@ -6,7 +6,7 @@ Entonces, si llevamos nuestra aplicación al directorio `/var/www/html` tendremo
 
 ## Instalación de apache2, mysql y algunas librerias al contenedor
 
-1. Actualització de la màquina.
+1. Actualización de la màquina.
 ```console
 sudo apt update
 ```
@@ -14,17 +14,17 @@ sudo apt update
 sudo apt upgrade
 ```
 
-2. Instal·lació del servidor web `apache2`.
+2. Instalación del servidor web `apache2`.
 ```console
 sudo apt install -y apache2
 ```
 
-3. Instal·lació del servidor de bases de dades `mysql-server`.
+3. Instalació del servidor de bases de datos `mysql-server`.
 ```console
 sudo apt install -y mysql-server
 ```
 
-4. Instal·lació d'algunes llibreries de `php`, el llenguatge principal que utilitzen les aplicacions.
+4. Instalación de algunas librerias de `php`, el lenguaje principal que utilizan las aplicaciones.
 ```console
 sudo apt install -y php libapache2-mod-php
 ```
@@ -32,7 +32,7 @@ sudo apt install -y php libapache2-mod-php
 sudo apt install -y php-fpm php-common php-mbstring php-xmlrpc php-soap php-gd php-xml php-intl php-mysql php-cli php-ldap php-zip php-curl
 ```
 
-5. Reiniciem el servidor apache2
+5. Reiniciamos el servidor apache2
 ```console
 sudo systemctl restart apache2
 ```
@@ -51,74 +51,31 @@ Un cop dins la consola de MySQL executem les comandes per a crear la base de dad
 CREATE DATABASE bbdd;
 ```
 
-### Creació d'un usuari
-Tingueu en compte que s'haurà d'identificar la IP des de la qual s'accedirà a la base de dades, en aquest cas, `localhost`.
+### Creación d'un usuari
+Tenemos en cuenta que se tendra que identificar la IP desde la que se accedera a la base de datos, en este caso, `localhost`.
 
 ```console
 CREATE USER 'usuario'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 ```
 
-### Donem privilegis a l'usuari:
+### Damos privilegios al usuari:
 ```console
 GRANT ALL ON bbdd.* to 'usuario'@'localhost';
 ```
 
-### Sortim de la base de dades
+### Salimos de la base de datos
 ```console
 exit
 ```
 
-### Probem la connexió a la base de dades
+### Probamos la conexión a la base de datos
 Des d'un terminal amb un usuari sense privilegis hem de ser capaços de connectar introduïnt la nostra contrassenya.
 
 ```console
 mysql -u usuario -p
 ```
 
-## Extra: permetre la connexió des d'una màquina remota
-Per seguretat, MySQL no permet per defecte connexions que no siguin des de localhost. Si volem canviar aquest comportament hem de crear un altre usuari que accedirà des d'una màquina remota i estarà identificat pel nom d'usuari i la seva IP. Així doncs, poden existir diferents usuaris anomenats `usuario` que connecten des de diferents màquines.
-
-### Canviem l'accés per defecte a la nostra màquina
-Permetem l'accés des de qualsevol equip a la nostra base de dades. Editem l'arxiu `/etc/mysql/mysql.conf.d/mysqld.cnf`
-
-```console
-vim /etc/mysql/mysql.conf.d/mysqld.cnf
-```
-
-Busquem la línia següent:
-```console
-bind-address = 127.0.0.1
-```
-
-Hem de canviar el `bind-address` per `0.0.0.0` i la línia ha de quedar així:
-```console
-bind-address = 0.0.0.0
-```
-
-### Reiniciem el servidor
-```console
-systemctl restart mysql
-```
-
-### Creació d'un usuari per a accedir des d'una màquina remota
-Per accedir des d'una màquina remota, hauriem de crear un usuari nou identificat pel nom d'usuari i la IP de la màquina des de la qual accedirà.
-
-```console
-CREATE USER 'usuario'@'192.168.22.100' IDENTIFIED WITH mysql_native_password BY 'password';
-```
-
-Hem de donar privilegis a l'usuari que accedirà des de la màquina remota.
-Per accedir des de fora, hauriem de donar-li també privilegis a l'usuari a l'altra màquina:
-
-```console
-GRANT ALL ON bbdd.* to 'usuario'@'192.168.22.100';
-```
-
-```console
-exit
-```
-
-## Descarreguem els fitxers de l'aplicació web
+## Descargamos los ficheros de la aplicación web
 Anem al directori `/var/www/html` i descomprimim allà els fitxers de l'aplicació web, heu de substituir `app-web.zip` per el nom del vostre fitxer que heu descarregat amb l'aplicació web i el nom de la carpeta `app-web` per la carpeta que us ha creat, si la vostra instal·lació de linux està en un idioma diferent al català, no tindreu la carpeta `Baixades`, modifiqueu la comanda per adaptarla a les vostrs necessitats.
 
 ```console
