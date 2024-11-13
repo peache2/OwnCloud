@@ -53,4 +53,4 @@ sudo a2enconf php7.4-fpm
 ```bash
 sudo service apache2 restart
 ```
-[*SIGUIENTE PASO*](https://github.com/peache2/FirstContact/blob/main/zverev.md)
+[*SIGUIENTE PASO*](https://github.com/peache2/OwnCloud.md/blob/main/aplicaci%C3%B3n-web.md)
