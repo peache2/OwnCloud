@@ -116,9 +116,11 @@ sudo chown -R usuario:www-data .
 ```
 ## Accedemos al navegador para que veamos que todo esta correcto
  http://localhost 
-Aqui tenemos la información que hay que rellenar
 * **usuario:** usuario
 * **contraseña:** password
 * **base de datos:** bbdd
 * **dominio:** localhost
 
+ <img src="owncloud.jpg" />  
+
+ ###### Hos saldra una pestaña como esta al entrar al http://localhost, rellenad los datos que hos he indicado anteriormente.
