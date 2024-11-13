@@ -123,4 +123,4 @@ sudo chown -R usuario:www-data .
 
  <img src="owncloud.jpg" />  
 
- ###### Hos saldra una pestaña como esta al entrar al http://localhost, rellenad los datos que hos he indicado anteriormente.
+ ###### Hos saldra una pestaña como esta al entrar al http://localhost, importante rellenar los datos que hos he indicado anteriormente.
