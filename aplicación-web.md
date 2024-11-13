@@ -76,35 +76,34 @@ mysql -u usuario -p
 ```
 
 ## Descargamos los ficheros de la aplicación web
-Vamos al directorio `/var/www/html` y descomprimimos los ficheros de la aplicació web, heu de substituir `app-web.zip` per el nom del vostre fitxer que heu descarregat amb l'aplicació web i el nom de la carpeta `app-web` per la carpeta que us ha creat, si la vostra instal·lació de linux està en un idioma diferent al català, no tindreu la carpeta `Baixades`, modifiqueu la comanda per adaptarla a les vostrs necessitats.
-
+Vamos al directorio `/var/www/html` y descomprimimos los ficheros de la aplicació web, tenemos que substituir `app-web.zip` per el nom del vostre fitxer que heu descarregat amb l'aplicació web i el nom de la carpeta `app-web` per la carpeta que us ha creat.
 ```console
-sudo cp ~/Baixades/app-web.zip /var/www/html
+sudo cp ~/Descargas/app-web.zip /var/www/html
 ```
 Aneu al directori `/var/www/html`
 ```console
 cd /var/www/html
 ```
-Descomprimiu el fitxer que heu baixat
+Descomprime el fichero que hemos descargado
 ```console
 sudo unzip app-web.zip
 ```
-Copieu els fitxers a la carpeta `/var/www/html`, modifiqueu `app-web` pel nom del directori on s'ha descomprimit el vostre arxiu.
+Copia los ficheros a la carpeta `/var/www/html`, modifica `app-web` por el nombre de la carpeta la cual se ha descomprimido, en este caso OwnCloud
 ```console
 sudo cp -R app-web/. /var/www/html
 ```
-Eliminem la carpeta creada quan hem fet l'`unzip`
+Eliminamos la carpeta creada cuando hicimos el l'`unzip`
 ```console
 sudo rm -rf app-web/
 ```
 
-## Eliminem el fitxer `index.html` de l'`apache2`
+## Eliminamos el fichero `index.html` de l'`apache2`
 ```console
 sudo rm -rf /var/www/html/index.html
 ```
 
-## Aplicació de permisos a les nostres aplicacions web
-Un cop descomprimits els fitxers de l'aplicació web al directori `/var/www/html`, apliquem els següents permisos al directori `/var/www/html`
+## Aplicación de permisos a la aplicacion web
+Una vez descomprimdos los ficheros de la aplicació web al directorio `/var/www/html`, aplicamos los permisos al directorio `/var/www/html`
 
 ```console
 cd /var/www/html
@@ -115,14 +114,11 @@ sudo chmod -R 775 .
 ```console
 sudo chown -R usuario:www-data .
 ```
-## Accedim al navegador per veure que tot funciona
-Poseu la direcció http://localhost al navegador web i configureu la cloud.
+## Accedemos al navegador para que veamos que todo esta correcto
+ http://localhost 
+Aqui tenemos la información que hay que rellenar
+* **usuario:** usuario
+* **contraseña:** password
+* **base de datos:** bbdd
+* **dominio:** localhost
 
-Si tot ha anat bé i heu seguit el manual us apareixerà l'instal·lador de l'aplicació web que heu baixat i us demanarà crear un usuario admin i la informació de la base de dades.
-
-La informació que heu de posar (si no heu modificat la informació del manual) és la següent:
-
-* **usuari:** usuario
-* **contrasenya:** password
-* **base de dades:** bbdd
-* **domini:** localhost
