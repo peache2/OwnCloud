@@ -19,7 +19,7 @@ sudo apt upgrade
 sudo apt install -y apache2
 ```
 
-3. Instalació del servidor de bases de datos `mysql-server`.
+3. Instalación del servidor de base de datos `mysql-server`.
 ```console
 sudo apt install -y mysql-server
 ```
@@ -37,21 +37,21 @@ sudo apt install -y php-fpm php-common php-mbstring php-xmlrpc php-soap php-gd p
 sudo systemctl restart apache2
 ```
 
-## Configuració de MySQL
-### Accedim a la consola de MySQL
-Des d'un terminal on siguem `root` hem d'executar la següent comanda:
+## Configuración de MySQL
+### Accedemos a la consola de MySQL
+Desde la terminal donde seguimos en `root` debemos de ejecutar la siguiente comanda:
 ```console
 sudo mysql
 ```
 
-### Creació de la base de dades:
-Un cop dins la consola de MySQL executem les comandes per a crear la base de dades. En aquest cas estem creant una base de dades amb el nom `bbdd`.
+### Creación de la base de datos:
+Una vez dentro de la consola de MySQL ejecutamos las comandas para crear la base de datos. En este caso estamos creando una base de datos con el nombre `bbdd`.
 
 ```console
 CREATE DATABASE bbdd;
 ```
 
-### Creación d'un usuari
+### Creación de un usuario
 Tenemos en cuenta que se tendra que identificar la IP desde la que se accedera a la base de datos, en este caso, `localhost`.
 
 ```console
@@ -69,14 +69,14 @@ exit
 ```
 
 ### Probamos la conexión a la base de datos
-Des d'un terminal amb un usuari sense privilegis hem de ser capaços de connectar introduïnt la nostra contrassenya.
+Desde la terminal con un usuario que no tiene privilegios hemos de ser capaces de conectar introduciendo la contraseá.
 
 ```console
 mysql -u usuario -p
 ```
 
 ## Descargamos los ficheros de la aplicación web
-Anem al directori `/var/www/html` i descomprimim allà els fitxers de l'aplicació web, heu de substituir `app-web.zip` per el nom del vostre fitxer que heu descarregat amb l'aplicació web i el nom de la carpeta `app-web` per la carpeta que us ha creat, si la vostra instal·lació de linux està en un idioma diferent al català, no tindreu la carpeta `Baixades`, modifiqueu la comanda per adaptarla a les vostrs necessitats.
+Vamos al directorio `/var/www/html` y descomprimimos los ficheros de la aplicació web, heu de substituir `app-web.zip` per el nom del vostre fitxer que heu descarregat amb l'aplicació web i el nom de la carpeta `app-web` per la carpeta que us ha creat, si la vostra instal·lació de linux està en un idioma diferent al català, no tindreu la carpeta `Baixades`, modifiqueu la comanda per adaptarla a les vostrs necessitats.
 
 ```console
 sudo cp ~/Baixades/app-web.zip /var/www/html
